@@ -15,10 +15,6 @@ public final class BlockLine implements ILine<ItemStack> {
   private ItemStack obj;
 
   public BlockLine(Line line, ItemStack obj) {
-    if (!obj.getType().isBlock()) {
-      throw new UnsupportedOperationException(
-          "'%s' is not a block. Are you looking for the new experimental ItemLine class?".formatted(obj.getType().name()));
-    }
     this.line = line;
     this.entityMetadataPacket = PacketsFactory.get().metadataPacket(line.getEntityID(), null);
 
